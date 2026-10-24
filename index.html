@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valerie Warshaw · Senior Interior Designer</title>
+  <meta name="description" content="Portfolio of Valerie Warshaw, a certified senior interior designer in Richmond, Virginia: workplace, hospitality, and education projects from schematic design through construction administration.">
+  <meta property="og:title" content="Valerie Warshaw · Senior Interior Designer">
+  <meta property="og:description" content="Workplace, hospitality, and education interiors, from schematic design through construction administration.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/p27.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23c9c9c7'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='15' font-weight='700' text-anchor='middle' fill='%23141414'%3EVW%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #ffffff;
+      --band: #c9c9c7;      /* the warm gray from the PDF's title panels */
+      --band-soft: #ececea;
+      --ink: #141414;
+      --muted: #5f5f5d;
+      --line: #dcdcda;
+      --gutter: clamp(16px, 4vw, 48px);
+      --max: 1320px;
+      --display: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --text: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--text); -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+    .eyebrow { font: 500 12px/1 var(--text); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
+    h1, h2, h3 { font-family: var(--display); letter-spacing: -.02em; margin: 0; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font: 500 14px/1 var(--text); text-decoration: none; transition: background .2s, color .2s; }
+    .btn:hover { background: transparent; color: var(--ink); }
+    .btn.ghost { background: transparent; color: var(--ink); }
+    .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+    .btn svg { width: 16px; height: 16px; flex: none; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid transparent; transition: border-color .2s; }
+    .site-header.scrolled { border-color: var(--line); }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .wordmark { font: 700 17px/1 var(--display); letter-spacing: -.01em; text-decoration: none; white-space: nowrap; }
+    .nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 32px); font-size: 14px; }
+    .nav a { text-decoration: none; color: var(--muted); }
+    .nav a:hover { color: var(--ink); }
+    .nav .btn { padding: 10px 14px; font-size: 13px; color: var(--paper); }
+    .nav .btn:hover { color: var(--ink); }
+    @media (max-width: 640px) { .nav .hide-sm { display: none; } }
+
+    /* Hero: echoes the PDF cover (white field + gray title panel) */
+    .hero { display: grid; grid-template-columns: 1.55fr 1fr; min-height: min(82vh, 760px); }
+    .hero-img { position: relative; overflow: hidden; background: var(--band-soft); }
+    .hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-panel { background: var(--band); display: flex; flex-direction: column; justify-content: flex-end; padding: clamp(28px, 5vw, 64px); }
+    .hero h1 { font-size: clamp(44px, 6.2vw, 92px); line-height: .95; font-weight: 700; }
+    .hero .sub { font: 600 clamp(17px, 1.6vw, 21px)/1.3 var(--display); margin: 18px 0 0; letter-spacing: -.01em; }
+    .hero .lede { max-width: 34ch; color: #2c2c2b; margin: 22px 0 32px; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero .credit { margin-top: 28px; font-size: 12px; color: #3d3d3c; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: 0; }
+      .hero-img { aspect-ratio: 3 / 2; }
+    }
+
+    /* Sectors strip */
+    .sectors { border-bottom: 1px solid var(--line); }
+    .sectors ul { list-style: none; margin: 0; padding: 22px 0; display: flex; flex-wrap: wrap; gap: 10px 36px; font: 600 15px/1.2 var(--display); }
+    .sectors li span { color: var(--muted); font: 400 13px var(--text); margin-left: 8px; }
+
+    /* Work */
+    section { padding: clamp(64px, 9vw, 120px) 0; }
+    .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 40px; }
+    .section-head h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1; font-weight: 700; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filters button { font: 500 13px/1 var(--text); padding: 10px 16px; border: 1px solid var(--line); background: var(--paper); color: var(--muted); cursor: pointer; border-radius: 999px; }
+    .filters button:hover { color: var(--ink); border-color: var(--ink); }
+    .filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 48px 28px; }
+    .project[hidden] { display: none; }
+    .project-open { all: unset; display: block; cursor: pointer; width: 100%; }
+    .project-img { display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--band-soft); }
+    .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .project-open:hover .project-img img, .project-open:focus-visible .project-img img { transform: scale(1.035); }
+    .project-open:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; }
+    .project-text { display: block; padding-top: 18px; }
+    .project-meta { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .project-title { display: block; font: 700 23px/1.15 var(--display); letter-spacing: -.015em; margin-top: 8px; }
+    .project-role { display: block; font-size: 14px; color: var(--muted); margin-top: 6px; }
+    .project-count { display: inline-block; font-size: 13px; margin-top: 12px; border-bottom: 1px solid var(--ink); }
+    .note { margin-top: 56px; font-size: 13px; color: var(--muted); }
+
+    /* About + contact */
+    .about { background: var(--band-soft); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(32px, 6vw, 96px); }
+    .about h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1; font-weight: 700; }
+    .about .body p { margin: 0 0 1em; max-width: 62ch; font-size: 17px; }
+    .about .body p:first-child { font: 500 clamp(20px, 2vw, 26px)/1.35 var(--display); letter-spacing: -.01em; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .facts dt { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .facts dd { margin: 6px 0 0; font-size: 15px; }
+    @media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .contact .wrap { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; }
+    .contact h2 { font-size: clamp(36px, 5.5vw, 76px); line-height: .98; font-weight: 700; max-width: 14ch; }
+    .contact .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 860px) { .contact .wrap { grid-template-columns: 1fr; } }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 13px; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    /* Lightbox */
+    dialog.lightbox { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #0f0f0f; color: #f2f2f0; }
+    dialog.lightbox::backdrop { background: #0f0f0f; }
+    .lb { display: grid; grid-template-rows: auto 1fr auto; height: 100%; }
+    .lb-top, .lb-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px var(--gutter); }
+    .lb-title { font: 700 18px/1.2 var(--display); }
+    .lb-meta { font-size: 13px; color: #a9a9a6; margin-top: 4px; }
+    .lb-stage { position: relative; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 0 var(--gutter); }
+    .lb-stage img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+    .lb button { font: 500 14px/1 var(--text); color: #f2f2f0; background: transparent; border: 1px solid #3a3a38; padding: 10px 14px; cursor: pointer; }
+    .lb button:hover { border-color: #f2f2f0; }
+    .lb .nav-btns { display: flex; gap: 8px; }
+    .lb-cap { font-size: 14px; }
+    .lb-count { font-size: 13px; color: #a9a9a6; margin-left: 12px; white-space: nowrap; }
+    .lb button { white-space: nowrap; }
+    @media (max-width: 520px) { .lb-bottom { flex-direction: column; align-items: stretch; } .lb .nav-btns { justify-content: space-between; } .lb .nav-btns button { flex: 1; } }
+    .lb :focus-visible { outline-color: #f2f2f0; }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .project-img img { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="wrap">
+      <a class="wordmark" href="#top">Valerie Warshaw</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#contact" class="hide-sm">Contact</a>
+        <a class="btn" href="Valerie-Warshaw-Portfolio.pdf" download>Portfolio PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-img">
+        <img src="assets/img/p27.jpg" width="1800" height="1202" alt="Hotel lobby lounge with wood-clad media wall and plum-toned seating, Courtyard by Marriott, Troy, NY" fetchpriority="high">
+      </div>
+      <div class="hero-panel">
+        <h1>Valerie<br>Warshaw</h1>
+        <p class="sub">Senior Interior Designer</p>
+        <p class="lede">Workplace, hospitality, and education interiors, from kick-off to punch list. Based in Richmond, Virginia.</p>
+        <div class="actions">
+          <a class="btn" href="#work">View projects</a>
+          <a class="btn ghost" href="Valerie-Warshaw-Portfolio.pdf" download>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2.5 14h11"/></svg>
+            Download portfolio (PDF, 18&nbsp;MB)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sectors">
+      <div class="wrap">
+        <ul aria-label="Project types">
+          <li>Workplace<span>4 projects</span></li>
+          <li>Hospitality<span>4 projects</span></li>
+          <li>Education<span>1 project</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="work" aria-labelledby="work-h">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2 id="work-h">Projects</h2>
+          </div>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="workplace" aria-pressed="false">Workplace</button>
+            <button type="button" data-filter="hospitality" aria-pressed="false">Hospitality</button>
+            <button type="button" data-filter="education" aria-pressed="false">Education</button>
+          </div>
+        </div>
+        <ul class="grid">
+      <li class="project" data-sector="workplace">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p03.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1201, &quot;cap&quot;: &quot;Break Room&quot;}, {&quot;src&quot;: &quot;assets/img/p04.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1394, &quot;cap&quot;: &quot;Break Room &amp; Conference&quot;}]' data-title="Prologis" data-meta="Orlando, FL · Workplace" aria-label="View Prologis, Orlando, FL (2 images)">
+          <span class="project-img"><img src="assets/img/p03-sm.jpg" width="900" height="601" alt="Break Room, Prologis, Orlando, FL" loading="eager" fetchpriority="high" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Workplace · Orlando, FL</span>
+            <span class="project-title">Prologis</span>
+            <span class="project-role">Construction Documents &amp; Construction Administration</span>
+            <span class="project-count">2 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="workplace">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p07.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1201, &quot;cap&quot;: &quot;Breakroom&quot;}, {&quot;src&quot;: &quot;assets/img/p06.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1201, &quot;cap&quot;: &quot;Reception&quot;}]' data-title="Gilbane" data-meta="Orlando, FL · Workplace" aria-label="View Gilbane, Orlando, FL (2 images)">
+          <span class="project-img"><img src="assets/img/p07-sm.jpg" width="900" height="601" alt="Breakroom, Gilbane, Orlando, FL" loading="eager" fetchpriority="high" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Workplace · Orlando, FL</span>
+            <span class="project-title">Gilbane</span>
+            <span class="project-role">Design Development, Construction Documents &amp; Construction Administration</span>
+            <span class="project-count">2 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="workplace">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p10.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1016, &quot;cap&quot;: &quot;Open Office&quot;}, {&quot;src&quot;: &quot;assets/img/p09.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1246, &quot;cap&quot;: &quot;Reception&quot;}]' data-title="Magnifica Air" data-meta="Orlando, FL · Workplace" aria-label="View Magnifica Air, Orlando, FL (2 images)">
+          <span class="project-img"><img src="assets/img/p10-sm.jpg" width="900" height="508" alt="Open Office, Magnifica Air, Orlando, FL" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Workplace · Orlando, FL</span>
+            <span class="project-title">Magnifica Air</span>
+            <span class="project-role">Design Development &amp; Construction Documents</span>
+            <span class="project-count">2 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="workplace">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p13.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1354, &quot;cap&quot;: &quot;Customer Experience&quot;}, {&quot;src&quot;: &quot;assets/img/p12.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1204, &quot;cap&quot;: &quot;Executive Board Room&quot;}, {&quot;src&quot;: &quot;assets/img/p14.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1270, &quot;cap&quot;: &quot;Floor Plan&quot;}, {&quot;src&quot;: &quot;assets/img/p15.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1306, &quot;cap&quot;: &quot;Reflected Ceiling Plan&quot;}, {&quot;src&quot;: &quot;assets/img/p16.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1305, &quot;cap&quot;: &quot;Ceiling Baffle Plan&quot;}]' data-title="Confidential Client" data-meta="Orlando, FL · Workplace" aria-label="View Confidential Client, Orlando, FL (5 images)">
+          <span class="project-img"><img src="assets/img/p13-sm.jpg" width="900" height="677" alt="Customer Experience, Confidential Client, Orlando, FL" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Workplace · Orlando, FL</span>
+            <span class="project-title">Confidential Client</span>
+            <span class="project-role">Schematic Design, Design Development &amp; Construction Documents</span>
+            <span class="project-count">5 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="hospitality">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p19.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1121, &quot;cap&quot;: &quot;Public Space FF&amp;E&quot;}, {&quot;src&quot;: &quot;assets/img/p18.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1165, &quot;cap&quot;: &quot;Design Concept&quot;}, {&quot;src&quot;: &quot;assets/img/p20.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1111, &quot;cap&quot;: &quot;Public Space FF&amp;E&quot;}, {&quot;src&quot;: &quot;assets/img/p21.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1130, &quot;cap&quot;: &quot;Guestroom FF&amp;E&quot;}]' data-title="DoubleTree by Hilton" data-meta="Wauwatosa, WI · Hospitality" aria-label="View DoubleTree by Hilton, Wauwatosa, WI (4 images)">
+          <span class="project-img"><img src="assets/img/p19-sm.jpg" width="900" height="561" alt="Public Space FF&amp;E, DoubleTree by Hilton, Wauwatosa, WI" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Hospitality · Wauwatosa, WI</span>
+            <span class="project-title">DoubleTree by Hilton</span>
+            <span class="project-role">Design Lead, Schematics to Construction Documents</span>
+            <span class="project-count">4 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="hospitality">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p27.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1202, &quot;cap&quot;: &quot;Lobby&quot;}, {&quot;src&quot;: &quot;assets/img/p28.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1395, &quot;cap&quot;: &quot;Reception&quot;}, {&quot;src&quot;: &quot;assets/img/p29.jpg&quot;, &quot;w&quot;: 1796, &quot;h&quot;: 1405, &quot;cap&quot;: &quot;Lobby&quot;}, {&quot;src&quot;: &quot;assets/img/p30.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 588, &quot;cap&quot;: &quot;Exercise &amp; Meeting Rooms&quot;}, {&quot;src&quot;: &quot;assets/img/p31.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1219, &quot;cap&quot;: &quot;Guest Rooms&quot;}]' data-title="Courtyard by Marriott" data-meta="Troy, NY · Hospitality" aria-label="View Courtyard by Marriott, Troy, NY (5 images)">
+          <span class="project-img"><img src="assets/img/p27-sm.jpg" width="900" height="601" alt="Lobby, Courtyard by Marriott, Troy, NY" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Hospitality · Troy, NY</span>
+            <span class="project-title">Courtyard by Marriott</span>
+            <span class="project-role">Design Lead, Schematics to Construction Administration</span>
+            <span class="project-count">5 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="hospitality">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p23.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1267, &quot;cap&quot;: &quot;Lobby&quot;}, {&quot;src&quot;: &quot;assets/img/p24.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1202, &quot;cap&quot;: &quot;Business Center&quot;}, {&quot;src&quot;: &quot;assets/img/p25.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1247, &quot;cap&quot;: &quot;Home Theater&quot;}]' data-title="Courtyard by Marriott" data-meta="Santa Fe, NM · Hospitality" aria-label="View Courtyard by Marriott, Santa Fe, NM (3 images)">
+          <span class="project-img"><img src="assets/img/p23-sm.jpg" width="900" height="634" alt="Lobby, Courtyard by Marriott, Santa Fe, NM" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Hospitality · Santa Fe, NM</span>
+            <span class="project-title">Courtyard by Marriott</span>
+            <span class="project-role">Design Lead, Schematics to Construction Administration</span>
+            <span class="project-count">3 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="hospitality">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p33.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1201, &quot;cap&quot;: &quot;Lobby&quot;}, {&quot;src&quot;: &quot;assets/img/p34.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1201, &quot;cap&quot;: &quot;Lobby&quot;}, {&quot;src&quot;: &quot;assets/img/p35.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1215, &quot;cap&quot;: &quot;Guestrooms&quot;}]' data-title="Courtyard by Marriott" data-meta="Portland, OR · Hospitality" aria-label="View Courtyard by Marriott, Portland, OR (3 images)">
+          <span class="project-img"><img src="assets/img/p33-sm.jpg" width="900" height="601" alt="Lobby, Courtyard by Marriott, Portland, OR" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Hospitality · Portland, OR</span>
+            <span class="project-title">Courtyard by Marriott</span>
+            <span class="project-role">Design Lead, Schematics to Construction Administration</span>
+            <span class="project-count">3 images</span>
+          </span>
+        </button>
+      </li>
+      <li class="project" data-sector="education">
+        <button class="project-open" type="button" data-gallery='[{&quot;src&quot;: &quot;assets/img/p37.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1351, &quot;cap&quot;: &quot;Gymnasium&quot;}, {&quot;src&quot;: &quot;assets/img/p38.jpg&quot;, &quot;w&quot;: 1800, &quot;h&quot;: 1164, &quot;cap&quot;: &quot;Lobby &amp; Multipurpose Rooms&quot;}]' data-title="Northstar Academy" data-meta="Glen Allen, VA · Education" aria-label="View Northstar Academy, Glen Allen, VA (2 images)">
+          <span class="project-img"><img src="assets/img/p37-sm.jpg" width="900" height="676" alt="Gymnasium, Northstar Academy, Glen Allen, VA" loading="lazy" decoding="async"></span>
+          <span class="project-text">
+            <span class="project-meta">Education · Glen Allen, VA</span>
+            <span class="project-title">Northstar Academy</span>
+            <span class="project-role">Design Lead, Schematics to Construction Administration</span>
+            <span class="project-count">2 images</span>
+          </span>
+        </button>
+      </li>
+        </ul>
+        <p class="note">Projects completed as part of the project team while employed at Baskervill.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-h">
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 id="about-h">Valerie Warshaw</h2>
+        </div>
+        <div class="body">
+          <!-- BIO -->
+          <p>I am a certified interior designer who knows how to guide the whole project team from the kick-off to the punch list.</p>
+          <p>I like to work with clients and coworkers alike to solve creative and special problems, and I can do this on multiple simultaneous projects without missing a beat.</p>
+          <p>I have more than 20 years of experience in commercial interiors. I spent 18 of them at Baskervill in Richmond, first as an Interior Designer and then as a Senior Interior Designer. Before that, I worked at KSA Interiors as an Interior Designer and Junior Project Manager. My work covers workplace, hospitality, and education projects, including leading the design of hotels for Marriott and Hilton brands from schematics through construction administration.</p>
+          <!-- /BIO -->
+          <dl class="facts">
+            <div><dt>Experience</dt><dd>20+ years in commercial interiors</dd></div>
+            <div><dt>Sectors</dt><dd>Workplace, Hospitality, Education</dd></div>
+            <div><dt>Services</dt><dd>Schematic design through construction administration; FF&amp;E selection</dd></div>
+            <div><dt>Education</dt><dd>Virginia Commonwealth University</dd></div>
+            <div><dt>Based in</dt><dd>Richmond, Virginia</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-h">Let’s talk about your next space.</h2>
+        </div>
+        <div class="actions">
+          <a class="btn" href="mailto:valeriewarshaw@gmail.com">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10"/><path d="M1.5 3.5 8 9l6.5-5.5"/></svg>
+            valeriewarshaw@gmail.com
+          </a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/valerie-warshaw-820572213/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.6 5.6H1.2V15h2.4zM2.4 1A1.4 1.4 0 1 0 2.4 3.8 1.4 1.4 0 0 0 2.4 1zM15 9.5c0-2.5-1.3-4.1-3.5-4.1-1.1 0-1.9.6-2.3 1.2V5.6H6.9V15h2.4v-4.9c0-1.3.6-2 1.6-2s1.6.8 1.6 2V15H15z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn ghost" href="Valerie-Warshaw-Portfolio.pdf" download>Portfolio (PDF)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Valerie Warshaw</span>
+      <span>Project photography and renderings courtesy of Baskervill and project partners.</span>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-labelledby="lb-title">
+    <div class="lb">
+      <div class="lb-top">
+        <div><div class="lb-title" id="lb-title"></div><div class="lb-meta"></div></div>
+        <button type="button" class="lb-close" aria-label="Close gallery">Close ✕</button>
+      </div>
+      <div class="lb-stage"><img alt=""></div>
+      <div class="lb-bottom">
+        <div><span class="lb-cap"></span><span class="lb-count"></span></div>
+        <div class="nav-btns">
+          <button type="button" class="lb-prev" aria-label="Previous image">← Prev</button>
+          <button type="button" class="lb-next" aria-label="Next image">Next →</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Header border once the page scrolls
+    const header = document.querySelector('.site-header');
+    const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    // Sector filters
+    const filterBtns = document.querySelectorAll('.filters button');
+    filterBtns.forEach(btn => btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      filterBtns.forEach(b => b.setAttribute('aria-pressed', b === btn));
+      document.querySelectorAll('.project').forEach(p => { p.hidden = f !== 'all' && p.dataset.sector !== f; });
+    }));
+
+    // Gallery lightbox
+    const dlg = document.querySelector('.lightbox');
+    const img = dlg.querySelector('.lb-stage img');
+    const cap = dlg.querySelector('.lb-cap');
+    const count = dlg.querySelector('.lb-count');
+    let items = [], idx = 0, opener = null;
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      const it = items[idx];
+      img.src = it.src; img.width = it.w; img.height = it.h;
+      img.alt = it.cap + ', ' + dlg.querySelector('.lb-title').textContent;
+      cap.textContent = it.cap;
+      count.textContent = (idx + 1) + ' / ' + items.length;
+      const single = items.length < 2;
+      dlg.querySelector('.nav-btns').hidden = single;
+      if (!single) new Image().src = items[(idx + 1) % items.length].src; // preload next
+    }
+    document.querySelectorAll('.project-open').forEach(btn => btn.addEventListener('click', () => {
+      opener = btn;
+      items = JSON.parse(btn.dataset.gallery);
+      dlg.querySelector('.lb-title').textContent = btn.dataset.title;
+      dlg.querySelector('.lb-meta').textContent = btn.dataset.meta;
+      show(0);
+      dlg.showModal();
+      dlg.querySelector('.lb-close').focus();
+    }));
+    dlg.querySelector('.lb-close').addEventListener('click', () => dlg.close());
+    dlg.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+    dlg.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+    dlg.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') show(idx + 1);
+      if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+    dlg.addEventListener('close', () => { img.removeAttribute('src'); opener && opener.focus(); });
+    // Swipe on touch screens
+    let x0 = null;
+    dlg.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    dlg.addEventListener('touchend', e => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    });
+  </script>
+</body>
+</html>
