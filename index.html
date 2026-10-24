@@ -137,8 +137,64 @@
 
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .project-img img { transition: none; } }
   </style>
+  <!-- GATE: temporary password screen. To remove it, delete every block marked GATE. -->
+  <meta name="robots" content="noindex, nofollow">
+  <script>
+    (function () {
+      var ok = false;
+      try { ok = localStorage.getItem('vw-gate') === '1'; } catch (e) {}
+      if (!ok) document.documentElement.classList.add('locked');
+    })();
+  </script>
+  <style>
+    .gate { display: none; }
+    html.locked body > :not(.gate) { display: none !important; }
+    html.locked .gate { display: grid; min-height: 100vh; place-items: center; padding: 24px 16px; background: var(--band); }
+    .gate form { width: 100%; max-width: 380px; }
+    .gate h1 { font-size: clamp(36px, 8vw, 52px); line-height: .95; font-weight: 700; }
+    .gate p { margin: 14px 0 24px; color: #2c2c2b; }
+    .gate label { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: #3d3d3c; margin-bottom: 8px; }
+    .gate .row { display: flex; gap: 8px; }
+    .gate input { flex: 1; min-width: 0; font: 400 16px var(--text); padding: 12px 14px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); border-radius: 0; }
+    .gate .err { min-height: 1.4em; margin: 10px 0 0; font-size: 14px; color: #8a1f1f; }
+  </style>
+  <!-- /GATE -->
 </head>
 <body>
+  <!-- GATE -->
+  <div class="gate">
+    <form id="gate-form" autocomplete="off">
+      <h1>Valerie<br>Warshaw</h1>
+      <p>This portfolio is private for now. Please enter the password you were given.</p>
+      <label for="gate-pw">Password</label>
+      <div class="row">
+        <input id="gate-pw" type="password" required autofocus>
+        <button class="btn" type="submit">Enter</button>
+      </div>
+      <p class="err" id="gate-err" role="alert"></p>
+    </form>
+  </div>
+  <script>
+    (function () {
+      var HASH = 'a4d58e2b7216c17c82769af1eacbda645e20ca519970d161cfe6c858b75e40bd';
+      var form = document.getElementById('gate-form');
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var pw = document.getElementById('gate-pw');
+        var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw.value.trim()));
+        var hex = Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+        if (hex === HASH) {
+          try { localStorage.setItem('vw-gate', '1'); } catch (err) {}
+          document.documentElement.classList.remove('locked');
+          scrollTo(0, 0);
+        } else {
+          document.getElementById('gate-err').textContent = 'That password didn’t work. Please try again.';
+          pw.select();
+        }
+      });
+    })();
+  </script>
+  <!-- /GATE -->
   <header class="site-header" id="top">
     <div class="wrap">
       <a class="wordmark" href="#top">Valerie Warshaw</a>
